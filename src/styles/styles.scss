@@ -1,0 +1,370 @@
+.app {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: url('../assets/main-bg.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #fff;
+    min-width: 768px;
+    max-width: 1928px;
+    min-height: 100vh;
+    overflow-y: hidden;
+  }
+
+  h3 {
+    &>div {
+      padding-left: 7px;
+    }
+    &>button {
+    padding-right: 7px;
+    }
+  }
+
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    text-align: left;
+    padding: 0 15px;
+  }
+
+  .header>h1 {
+    margin-left: 15px;
+  }
+
+  .searchbox {
+    width: 430px;
+  }
+
+  input[type=search] {
+    width: 430px;
+    height: 40px;
+    background-color: rgba(13, 12, 12, 0.5);
+    border-radius: 20px;
+    padding-left: 45px;
+    border: 1px solid #fff;
+    color: #fff;
+    padding-right: 25px;
+    &:hover {
+      box-shadow: 0 0 0 1px #0184CF;
+    }
+    &:focus {
+      box-shadow: 0 0 0 3px #0184CF;
+    }
+  }
+  .input-clear-button {
+    background-color: #fff;
+  }
+
+  .searchbar-icon {
+    display: inline-block;
+    background-image: url(/src/assets/magnifier.png);
+    position: relative;
+    width: 24px;
+    height: 24px;
+    right: 26em;
+    top: 12px;
+    background-repeat: no-repeat;
+    cursor: pointer;
+  }
+
+  .kanban-board {
+    display: flex;
+    justify-content: space-around;
+    width: 95%;
+    overflow-x: auto;
+    &>div:first-child>h3 {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+    }
+    &>div:last-child>h3 {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+  
+  .column {
+    flex: 1;
+    margin: 10px;
+    background-color: rgba(13, 12, 12, 0.5);
+    min-height: 500px;
+  }
+  
+  .task-card {
+    padding: 10px;
+    margin: 5px;
+    background-color: rgba(242, 241, 237, 0.1);
+  }
+
+  .task-edit-form {
+    margin: 0;
+    padding: 10px;
+  }
+  .editing {
+    padding: 0;
+    margin: 0;
+  }
+  .task-edit-form-active {
+    background-color: rgba(242, 241, 237, 0.1);
+    margin: 5px;
+  }
+  
+  .task-edit-form {
+    display: flex;
+    flex-direction: column;
+    &>label>input {
+      width: 180px;
+      margin-left: 15px;
+    }
+  }
+  .task-card.overdue {
+    border: 1px solid red;
+    &>p:nth-child(2)>span {
+      color: red;
+    }
+  }
+  .overdue-text {
+    color: red;
+  }
+  
+  .trash-bin {
+    padding: 10px;
+  }
+
+  .task-add-btn {
+    font-size: 14px;
+    color: #fff;
+    background: none;
+    border: none;
+    cursor: pointer;
+    &:hover {
+      color: #0184CF;
+    }
+  }
+
+  .task-del-btn {
+    background: none;
+    border: none;
+    margin-left: 35px;
+    padding-left: 50px;
+    cursor: pointer;
+  }
+  .edit-btn-group {
+    display: flex;
+    justify-content: end;
+    margin-top: 10px;
+    &>button {
+      margin: 0;
+    }
+  }
+
+  .tasks-descr {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.6);
+    padding: 5px;
+    &>input {
+      margin: 5px 0;
+    }
+  }
+  .tasks-descr-value {
+    font-weight: bold;
+    font-size: 14px;
+    background: none;
+    color: rgba(255, 255, 255, 0.87);
+  }
+
+  .tasks-edit-descr {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 14px;
+    display: flex;
+    padding: 5px;
+    &>div {
+      width: 50%;
+      color: rgba(255, 255, 255, 0.87);
+      background: none;
+    }
+  }
+
+  .task-cancel-btn, .task-save-btn {
+    cursor: pointer;
+    background: none;
+    border: none;
+  }
+  .tasks-edit-descr-value  {
+    width: 200px !important;
+    color: rgba(255, 255, 255, 0.87) !important;
+    background: none !important;
+    margin-left: 15px;
+  }
+  .tasks-edit-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    left: 20em;
+    &>img {
+      width: 24px;
+      height: 24px;
+    }
+  }
+
+  .column-smile-container {
+    display: flex;
+    align-items: center;
+    &>img {
+      width: 20px;
+      height: 20px;
+      margin-right: 5px;
+    }
+  }
+  .provided-placeholder {
+    display: none;
+  }
+
+  .error-message {
+    color: red;
+    font-size: 24px;
+    margin-top: 10px;
+    font-weight: bold;
+    position: absolute;
+    top: 50%;
+    bottom: 50%;
+  }
+
+  .first-columns-container {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+
+  //css для модального окна
+
+  .modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .modal {
+    color: #fff;
+    background: url('../assets/main-bg.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 20px;
+    border-radius: 4px;
+    width: 400px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  input[type=text] {
+    background-color: rgba(255, 255, 255, 0.7);
+    border: 1px solid;
+    width: 95%;
+    height: 26px;
+    border-radius: 4px;
+    padding-left: 15px;
+    font-size: 12px;
+    font-weight: bold;
+    &:hover {
+      border: 1px solid #0184CF;
+      outline: none;
+      box-shadow: 0 0 0 1px #0184CF;
+    }
+    &:focus {
+      outline: none;
+      box-shadow: 0 0 0 4px #0184CF;
+
+    }
+  }
+  
+  .react-datepicker-wrapper {
+    width: 100%;
+  }
+  .modal-field {
+    margin-bottom: 15px;
+    &>textarea {
+      background-color: rgba(255, 255, 255, 0.7);
+      width: 95%;
+      border-radius: 4px;
+      padding-left: 15px;
+      font-size: 16px;
+      font-weight: bold;
+      resize: none;
+      &:hover {
+        outline: none;
+        border: 1px solid #0184CF;
+        box-shadow: 0 0 0 1px #0184CF;
+
+      }
+      &:focus {
+        outline: none;
+        box-shadow: 0 0 0 4px #0184CF;
+      }
+    }
+  }
+  
+  .modal-field label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+  
+  .modal-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+  }
+  
+  .modal-buttons button {
+    width: 100%;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .modal-buttons button:first-of-type {
+    background: #007bff;
+    color: white;
+  }
+  
+  .modal-buttons button:last-of-type {
+    background: #f0f0f0;
+    color: black;
+  }
+  
+
+  @media (max-width: 767px) {
+    .kanban-board {
+      overflow-x: auto;
+      padding: 10px;
+    }
+  
+    .column {
+      flex: 1 1 100%;
+      margin: 10px 0;
+    }
+  }
+  
+  @media (min-width: 1921px) {
+    .kanban-board {
+      max-width: 1920px;
+      margin: 0 auto;
+      padding: 0 50px;
+    }
+  
+    .column {
+      flex: 1 1 20%;
+      margin: 0 20px;
+    }
+  }
