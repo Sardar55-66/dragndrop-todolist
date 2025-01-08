@@ -201,12 +201,13 @@
     margin-left: 15px;
   }
   .tasks-edit-btn {
+    width: 100%;
     background: none;
     border: none;
     cursor: pointer;
-    position: relative;
     left: 20em;
     &>img {
+      float: right;
       width: 24px;
       height: 24px;
     }
@@ -226,6 +227,8 @@
   }
 
   .error-message {
+    width: 100%;
+    text-align: center;
     color: red;
     font-size: 24px;
     margin-top: 10px;
@@ -344,10 +347,11 @@
   }
   
 
-  @media (max-width: 767px) {
+  @media (max-width: 850px) {
     .kanban-board {
       overflow-x: auto;
       padding: 10px;
+      flex-direction: column;
     }
   
     .column {
