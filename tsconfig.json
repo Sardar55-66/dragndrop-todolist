@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "resolveJsonModule": true,
-    "target": "ES6",
+    "target": "es2016",
     "module": "ESNext",
     "jsx": "react",
     "strict": true,
@@ -9,5 +9,6 @@
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "skipLibCheck": true
-  }
+  },
+  "include": ["src/**/*", "custom.d.ts"]
 }
