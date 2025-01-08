@@ -20,7 +20,7 @@ const TrashBin: React.FC<TrashBinProps> = ({ handleDeleteAllDoneTasks }) => {
           <button
             ref={provided.innerRef}
             {...provided.droppableProps}
-            className={`task-del-btn ${snapshot.isDraggingOver ? "highlight" : ""}`}
+            className={`task-del-btn ${snapshot.isDraggingOver ? setTrashIcon(trashIconHovered) : setTrashIcon(trashIconDefault)}`}
             type="button"
             onClick={handleDeleteAllDoneTasks}
           >
